@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Repositories -->
+    <bean id="publisherRepository" class="ma.clicktrack.repository.InMemoryPublisherRepository" />
+    <bean id="lienRepository" class="ma.clicktrack.repository.InMemoryLienRepository" />
+    <!-- Services -->
+    <bean id="publisherService" class="ma.clicktrack.service.PublisherServiceImpl">
+        <constructor-arg ref="publisherRepository" />
+        <constructor-arg ref="lienRepository" />
+    </bean>
+</beans>
