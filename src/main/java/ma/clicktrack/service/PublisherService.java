@@ -1,6 +1,5 @@
 package ma.clicktrack.service;
 
-import ma.clicktrack.model.Lien;
 import ma.clicktrack.model.Publisher;
 
 import java.util.List;

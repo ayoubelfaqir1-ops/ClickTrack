@@ -47,4 +47,16 @@ public class InMemoryLienRepository implements LienRepository {
         liens.add(lien);
         return lien;
     }
+
+    @Override
+    public synchronized Lien ClicksIncrement(Long id) {
+        Lien lien = this.findById(id);
+        if (lien == null) {
+            return null;
+        }
+        Long clicks = lien.getClicks();
+        clicks++;
+        lien.setClicks(clicks);
+        return lien;
+    }
 }

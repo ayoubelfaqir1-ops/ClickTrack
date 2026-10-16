@@ -9,4 +9,5 @@ public interface LienRepository {
     public List<Lien> getPublisherLinks(Long id);
     public Lien findByLien(String lien);
     public Lien findById(Long id);
+    public Lien ClicksIncrement(Long id);
 }
