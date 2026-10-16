@@ -1,4 +1,10 @@
 package ma.clicktrack.service;
 
-public class PublisherService {
+import ma.clicktrack.model.Publisher;
+
+import java.util.List;
+
+public interface PublisherService {
+    public List<Publisher> getAllPublishers();
+    public Publisher save(Publisher publisher);
 }

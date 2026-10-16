@@ -10,7 +10,14 @@
     <bean id="lienRepository" class="ma.clicktrack.repository.InMemoryLienRepository" />
     <!-- Services -->
     <bean id="publisherService" class="ma.clicktrack.service.PublisherServiceImpl">
-        <constructor-arg ref="publisherRepository" />
-        <constructor-arg ref="lienRepository" />
+        <constructor-arg ref="publisherRepository"/>
+    </bean>
+    <bean id="lienService" class="ma.clicktrack.service.LienServiceImpl">
+        <constructor-arg ref="lienRepository"/>
+        <constructor-arg ref="publisherRepository"/>
+    </bean>
+    <bean id="dataInitializer" class="ma.clicktrack.initializer.DataInitializer" init-method="initData">
+        <constructor-arg ref="publisherService" />
+        <constructor-arg ref="lienService"/>
     </bean>
 </beans>
