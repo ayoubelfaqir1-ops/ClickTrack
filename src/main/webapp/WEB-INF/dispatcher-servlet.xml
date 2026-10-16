@@ -10,7 +10,8 @@
     <!-- Enables mapping annotations -->
     <mvc:annotation-driven />
     <!-- Controller Bean Declared in XML -->
-    <bean id="dummyController" class="ma.clicktrack.controller.DummyController">
+    <bean id="clickTrackController" class="ma.clicktrack.controller.ClickTrackController">
         <constructor-arg ref="publisherService"/>
+        <constructor-arg ref="lienService"/>
     </bean>
 </beans>

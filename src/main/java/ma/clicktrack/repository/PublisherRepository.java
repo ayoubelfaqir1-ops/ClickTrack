@@ -10,4 +10,5 @@ public interface PublisherRepository {
     public List<Lien> getPublisherLinks(Long id);
     public Lien createLien(String DestinationUrl, Long publisherId);
     public Publisher save(Publisher publisher);
+    public Publisher findById(Long id);
 }

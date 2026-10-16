@@ -6,6 +6,8 @@ public class Publisher {
     private String prenom;
     private String email;
     private Categorie categorie;
+    public Publisher() {}
+
     public Publisher(Long id, String name, String prenom, String email, Categorie categorie){
         this.id = id;
         this.name = name;

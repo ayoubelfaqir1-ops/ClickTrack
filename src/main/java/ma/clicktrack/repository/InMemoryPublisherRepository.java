@@ -28,4 +28,12 @@ public class InMemoryPublisherRepository implements PublisherRepository{
         publishers.add(publisher);
         return publisher;
     };
+
+    @Override
+    public Publisher findById(Long id) {
+        return publishers.stream()
+                .filter(p -> p.getId().equals(id))
+                .findFirst()
+                .orElse(null);
+    }
 }
